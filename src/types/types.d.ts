@@ -8,4 +8,5 @@ type Character = {
   char_id: number;
   occupation: Array<string>;
   appearance: Array<number>;
+  category: string;
 };

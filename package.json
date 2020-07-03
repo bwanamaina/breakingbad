@@ -2,6 +2,16 @@
   "name": "breakingbad",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "url": "https://github.com/bwanamaina/breakingbad.git",
+    "type": "git",
+    "directory": "breakingbad"
+  },
+  "author": {
+    "email": "johnmuhuhe@gmail.com",
+    "name": "Bwana Maina",
+    "url": "https://bwanamaina.com/"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -36,5 +46,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2"
   }
 }

@@ -12,9 +12,9 @@ const Card: React.FC<ICard> = ({ items, isLoading }) => {
     <Spinner />
   ) : (
     <section className='cards'>
-      {items.map((item) => (
-        <Item key={item.char_id} item={item}></Item>
-      ))}
+      {items &&
+        items.length > 0 &&
+        items.map((item) => <Item key={item.char_id} item={item}></Item>)}
     </section>
   );
 };

@@ -30,6 +30,9 @@ const Item: React.FC<IItem> = ({ item }) => {
               <strong>Appearance:</strong> {item.appearance.toString()}
             </li>
             <li>
+              <strong>Category:</strong> {item.category}
+            </li>
+            <li>
               <strong>Status:</strong> {item.status}
             </li>
           </ul>

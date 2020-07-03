@@ -18,6 +18,7 @@ const App = () => {
         );
         setItems(data);
         setIsLoading(false);
+        // window.console.dir(data);
       } catch (error) {
         setIsLoading(false);
       }
