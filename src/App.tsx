@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
 
-function App() {
+import Header from './components/Header';
+import Search from './components/Search';
+import Card from './components/Card';
+
+const App = () => {
+  const [items, setItems] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [searchText, setSearchText] = React.useState('');
+
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios(
+          `https://www.breakingbadapi.com/api/characters?name=${searchText}`
+        );
+        setItems(data);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+      }
+    })();
+  }, [searchText]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Header />
+      <Search searchQuery={(query) => setSearchText(query)} />
+      <Card isLoading={isLoading} items={items} />
     </div>
   );
-}
+};
 
 export default App;
