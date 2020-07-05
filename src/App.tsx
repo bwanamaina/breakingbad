@@ -14,11 +14,10 @@ const App = () => {
     (async () => {
       try {
         const { data } = await axios(
-          `https://www.breakingbadapi.com/api/characters?name=${searchText}`
+          `https://www.breakingbadapi.com/api/characters?name=${searchText}`,
         );
         setItems(data);
         setIsLoading(false);
-        // window.console.dir(data);
       } catch (error) {
         setIsLoading(false);
       }
@@ -26,7 +25,7 @@ const App = () => {
   }, [searchText]);
 
   return (
-    <div className='container'>
+    <div className="container">
       <Header />
       <Search searchQuery={(query) => setSearchText(query)} />
       <Card isLoading={isLoading} items={items} />

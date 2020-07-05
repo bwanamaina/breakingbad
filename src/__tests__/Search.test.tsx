@@ -1,16 +1,17 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { ShallowWrapper, shallow } from 'enzyme';
 
 import Search from '../components/Search';
+import data from '../data';
 
 describe('<Search/> Component', () => {
   const searchQuery = jest.fn();
   const input = 'input[type="text"]';
-  let wrapper: any;
-  const searchValue = 'Skyler White';
+  let wrapper: ShallowWrapper<{ value: string; searchQuery: string }, {}, any>;
+  const searchValue: string = data[0].name;
 
   beforeEach(() => {
-    wrapper = mount(<Search searchQuery={searchQuery} />);
+    wrapper = shallow(<Search searchQuery={searchQuery} />);
   });
 
   afterEach(() => {
@@ -21,15 +22,11 @@ describe('<Search/> Component', () => {
     expect(wrapper.find(input).length).toEqual(1);
   });
 
-  it('calls setSearchText with Skyler White', () => {
-    wrapper.find(input).simulate('change', {
+  it('Should change state onChange', () => {
+    const textInput = wrapper.find(input);
+    textInput.simulate('change', {
       target: { value: searchValue },
     });
-    expect(wrapper.find(input).instance().value).toEqual(searchValue);
-  });
-
-  it('allows us to set props', () => {
-    wrapper.setProps({ searchQuery: searchValue });
-    expect(wrapper.props().searchQuery).toEqual(searchValue);
+    expect(wrapper.find(input).prop('value')).toEqual(searchValue);
   });
 });

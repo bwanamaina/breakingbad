@@ -6,12 +6,12 @@ interface IItem {
 
 const Item: React.FC<IItem> = ({ item }) => {
   return (
-    <div className='card'>
-      <div className='card-inner'>
-        <div className='card-front'>
-          <img src={item.img} alt='' />
+    <div className="card">
+      <div className="card-inner">
+        <div className="card-front">
+          <img src={item.img} alt={item.name} />
         </div>
-        <div className='card-back'>
+        <div className="card-back">
           <h1>{item.name}</h1>
           <ul>
             <li>

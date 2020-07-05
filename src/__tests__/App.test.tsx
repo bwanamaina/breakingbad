@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 
 import App from '../App';
 import Header from '../components/Header';
@@ -7,7 +7,11 @@ import Card from '../components/Card';
 import Search from '../components/Search';
 
 describe('<App/> Component', () => {
-  let component: any;
+  let component: ShallowWrapper<
+    any,
+    Readonly<{}>,
+    React.Component<{}, {}, any>
+  >;
 
   beforeEach(() => {
     component = shallow(<App />);
@@ -22,31 +26,10 @@ describe('<App/> Component', () => {
   });
 
   test('Renders <Card/> component', () => {
-    expect(component.find(Card)).toBeTruthy();
+    expect(component.find(Card).length).toEqual(1);
   });
 
   test('Renders <Search/> component', () => {
     expect(component.find(Search)).toBeTruthy();
-  });
-
-  it('check number of cards rendered', () => {
-    const isLoading = false;
-    const items: Array<Character> = [
-      {
-        appearance: [3, 4],
-        birthday: 'Unknown',
-        category: 'Breaking Bad',
-        char_id: 51,
-        img:
-          'https://vignette.wikia.nocookie.net/breakingbad/images/8/81/Group_Leader_Brown_Shirt_-_Kafkaesque.png/revision/latest?cb=20131025095333',
-        name: 'Group Leader',
-        nickname: 'Counselor',
-        occupation: ['Drug & Alcohol Rehabilitation Counselor'],
-        portrayed: 'Jere Burns',
-        status: 'Alive',
-      },
-    ];
-    const card = mount(<Card isLoading={isLoading} items={items} />);
-    expect(card.find('div.card').length).toEqual(1);
   });
 });

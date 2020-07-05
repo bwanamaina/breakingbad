@@ -4,8 +4,8 @@ import logo from '../../img/logo.png';
 
 const Header = () => {
   return (
-    <header className='center'>
-      <img src={logo} alt='braeking bad' />
+    <header className="center">
+      <img src={logo} alt="breaking bad" />
     </header>
   );
 };

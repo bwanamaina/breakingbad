@@ -18,7 +18,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
+    "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.0",
     "axios": "^0.19.2",
     "react": "^16.13.1",
@@ -29,8 +29,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:coverage": "react-scripts test --coverage --runInBand --watchAll=false",
+    "test": "react-scripts test --env=jsdom --verbose --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +52,7 @@
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2"
+    "enzyme-adapter-react-16": "^1.15.2",
+    "ts-jest": "^26.1.1"
   }
 }
