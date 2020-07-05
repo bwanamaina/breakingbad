@@ -4,11 +4,21 @@ import axios from 'axios';
 import Header from './components/Header';
 import Search from './components/Search';
 import Card from './components/Card';
+import Pagination from './components/Pagination';
 
 const App = () => {
-  const [items, setItems] = React.useState([]);
+  const [characters, setCharacters] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [searchText, setSearchText] = React.useState('');
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const charactersPerPage = 8;
+  const lastCharacterIndex = currentPage * charactersPerPage;
+  const firstCharacterIndex = lastCharacterIndex - charactersPerPage;
+  const currentCharacters: Array<Character> = characters.slice(
+    firstCharacterIndex,
+    lastCharacterIndex,
+  );
+  const onPaginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   React.useEffect(() => {
     (async () => {
@@ -16,7 +26,7 @@ const App = () => {
         const { data } = await axios(
           `https://www.breakingbadapi.com/api/characters?name=${searchText}`,
         );
-        setItems(data);
+        setCharacters(data);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -28,7 +38,12 @@ const App = () => {
     <div className="container">
       <Header />
       <Search searchQuery={(query) => setSearchText(query)} />
-      <Card isLoading={isLoading} items={items} />
+      <Card isLoading={isLoading} items={currentCharacters} />
+      <Pagination
+        charactersPerPage={charactersPerPage}
+        totalCharacters={characters.length}
+        onPaginate={onPaginate}
+      />
     </div>
   );
 };

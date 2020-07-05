@@ -5,6 +5,7 @@ import App from '../App';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import Search from '../components/Search';
+import Pagination from '../components/Pagination';
 
 describe('<App/> Component', () => {
   let component: ShallowWrapper<
@@ -17,19 +18,22 @@ describe('<App/> Component', () => {
     component = shallow(<App />);
   });
 
-  test('renders <App/> component', () => {
+  test('Should render <App/> component', () => {
     expect(component).toMatchSnapshot();
   });
 
-  test('Renders <Header/> component', () => {
+  test('Should render <Header/> component', () => {
     expect(component.contains(<Header />)).toBe(true);
   });
 
-  test('Renders <Card/> component', () => {
+  test('Should render <Card/> component', () => {
     expect(component.find(Card).length).toEqual(1);
   });
 
-  test('Renders <Search/> component', () => {
+  test('Should render <Search/> component', () => {
     expect(component.find(Search)).toBeTruthy();
+  });
+  test('Should render <Pagination/> component', () => {
+    expect(component.find(Pagination)).toBeTruthy();
   });
 });
