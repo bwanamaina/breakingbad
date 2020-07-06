@@ -14,7 +14,7 @@ describe('<Card/> component', () => {
     wrapper = shallow(<Card items={data} isLoading={isLoading} />);
   });
 
-  test('Initial state should render <Spinner/>', () => {
+  test('Should render <Spinner/> on mount', () => {
     const isLoading = true;
     wrapper = shallow(<Card items={data} isLoading={isLoading} />);
     expect(wrapper.find(Spinner)).toBeTruthy();

@@ -32,4 +32,9 @@ describe('<Search/> Component', () => {
     wrapper.find('button').at(0).simulate('click');
     expect(onPaginate).toHaveBeenCalled();
   });
+
+  test('Should add active class to button after click', () => {
+    wrapper.find('button').at(0).simulate('click');
+    expect(wrapper.find('button').at(0).hasClass('active')).toBeTruthy();
+  });
 });

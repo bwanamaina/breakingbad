@@ -13,7 +13,7 @@ const Pagination: React.FC<IPagination> = ({
   totalCharacters,
   onPaginate,
 }) => {
-  const [activeButton, setActiveButton] = React.useState(0);
+  const [activeButton, setActiveButton] = React.useState(1);
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalCharacters / charactersPerPage); i++) {
     pageNumbers.push(i);

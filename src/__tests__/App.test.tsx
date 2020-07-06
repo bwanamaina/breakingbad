@@ -19,7 +19,7 @@ describe('<App/> Component', () => {
   });
 
   test('Should render <App/> component', () => {
-    expect(component).toMatchSnapshot();
+    expect(component).not.toBeNull();
   });
 
   test('Should render <Header/> component', () => {
