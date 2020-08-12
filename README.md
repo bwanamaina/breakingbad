@@ -35,12 +35,12 @@ Unit-testing using jest.
 yarn cypress
 ```
 
-Integration-testing sung cypress.
+Integration-testing using cypress.
 
 ## Technologies used
 
-- axios: ^0.19.2,
-- react: ^16.13.1,
-- react-dom: ^16.13.1,
-- react-scripts: 3.4.1,
-- typescript: ~3.7.2
+- axios: version 0.19.2
+- react: version 16.13.1
+- react-dom: version 16.13.1
+- react-scripts: version 3.4.1
+- typescript: version 3.7.2
