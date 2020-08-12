@@ -4,26 +4,31 @@ React app using [breaking bad api](https://breakingbadapi.com/documentation) to 
 
 Credit to [Traversy Media](https://www.youtube.com/watch?v=YaioUnMw0mo)
 
-# Usage
+## Usage
+
+# Install dependencies
 
 ```
-# Install dependencies
 yarn install
 ```
 
-```
-# Run app
-yarn start
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-```
+### Run app
 
 ```
-# Run unit-test
+yarn start
+```
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3030) to view it in the browser.
+
+### Run unit-test
+
+```
 yarn test
 ```
 
+### Run integration-test
+
 ```
-# Run integration-test
 yarn cypress
 ```
