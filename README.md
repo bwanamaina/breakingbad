@@ -6,7 +6,7 @@ Credit to [Traversy Media](https://www.youtube.com/watch?v=YaioUnMw0mo)
 
 ## Usage
 
-# Install dependencies
+### Install dependencies
 
 ```
 yarn install
@@ -19,7 +19,7 @@ yarn start
 ```
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3030) to view it in the browser.
+Open [http://localhost:3030](http://localhost:3030) to view it in the browser.
 
 ### Run unit-test
 
@@ -27,8 +27,20 @@ Open [http://localhost:3000](http://localhost:3030) to view it in the browser.
 yarn test
 ```
 
+Unit-testing using jest.
+
 ### Run integration-test
 
 ```
 yarn cypress
 ```
+
+Integration-testing sung cypress.
+
+## Technologies used
+
+- axios: ^0.19.2,
+- react: ^16.13.1,
+- react-dom: ^16.13.1,
+- react-scripts: 3.4.1,
+- typescript: ~3.7.2
