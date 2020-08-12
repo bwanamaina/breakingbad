@@ -8,10 +8,22 @@ Credit to [Traversy Media](https://www.youtube.com/watch?v=YaioUnMw0mo)
 
 ```
 # Install dependencies
-npm install
+yarn install
 ```
 
 ```
 # Run app
-npm start
+yarn start
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+
+```
+# Run unit-test
+yarn test
+```
+
+```
+# Run integration-test
+yarn cypress
 ```
